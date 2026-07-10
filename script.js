@@ -7,10 +7,12 @@ const getSum = () => {
   const prices = element.querySelectorAll(".price");
 	let total = 0;
 	prices.forEach((price)=>{
-		total +=price;
+		total += parseInt(price.textContent);
 	} )
 	const tr = document.createElement("tr");
-	tr.innerHTML = `<td>${total}</td>`
+	tr.innerHTML = `<td>${total}</td>`;
+	const table = document.querySelector("table");
+	table.appendChild(tr);
 };
 
 getSumBtn.addEventListener("click", getSum);
